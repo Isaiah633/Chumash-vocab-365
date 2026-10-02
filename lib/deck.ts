@@ -1,0 +1,117 @@
+export interface WordEntry {
+  /** Hebrew with nikud (display RTL) */
+  h: string;
+  /** Transliteration (CAPS = stressed syllable) */
+  t: string;
+  /** English gloss (original to this app) */
+  g: string;
+  /** Shoresh ("" when none) */
+  s: string;
+  /** Verse reference, e.g. "Genesis 1:1" */
+  ref: string;
+  /** Sefaria ref slug, e.g. "Genesis.1.1" -> https://www.sefaria.org/Genesis.1.1 */
+  sef: string;
+}
+
+/**
+ * 95-word starter deck. Hebrew spellings verified against Sefaria's
+ * public-domain Masoretic text (Genesis 1, Genesis 2, Exodus 20).
+ * Order is narrative order — do not reorder (new cards introduce in order).
+ */
+export const DECK: WordEntry[] = [
+  { h: "בְּרֵאשִׁית", t: "be-re-SHEET", g: "in the beginning", s: "ר-א-ש", ref: "Genesis 1:1", sef: "Genesis.1.1" },
+  { h: "בָּרָא", t: "ba-RA", g: "he created", s: "ב-ר-א", ref: "Genesis 1:1", sef: "Genesis.1.1" },
+  { h: "אֱלֹהִים", t: "e-lo-HEEM", g: "God", s: "", ref: "Genesis 1:1", sef: "Genesis.1.1" },
+  { h: "אֵת", t: "et", g: "(marks the direct object)", s: "", ref: "Genesis 1:1", sef: "Genesis.1.1" },
+  { h: "שָׁמַיִם", t: "sha-MA-yim", g: "heavens, sky", s: "", ref: "Genesis 1:1", sef: "Genesis.1.1" },
+  { h: "אֶרֶץ", t: "E-rets", g: "earth, land", s: "", ref: "Genesis 1:1", sef: "Genesis.1.1" },
+  { h: "תֹהוּ וָבֹהוּ", t: "TO-hu va-VO-hu", g: "unformed and void", s: "", ref: "Genesis 1:2", sef: "Genesis.1.2" },
+  { h: "חֹשֶׁךְ", t: "KHO-shekh", g: "darkness", s: "ח-ש-ך", ref: "Genesis 1:2", sef: "Genesis.1.2" },
+  { h: "רוּחַ", t: "RU-akh", g: "spirit, wind", s: "ר-ו-ח", ref: "Genesis 1:2", sef: "Genesis.1.2" },
+  { h: "מַיִם", t: "MA-yim", g: "water", s: "", ref: "Genesis 1:2", sef: "Genesis.1.2" },
+  { h: "אָמַר", t: "a-MAR", g: "he said", s: "א-מ-ר", ref: "Genesis 1:3", sef: "Genesis.1.3" },
+  { h: "אוֹר", t: "or", g: "light", s: "", ref: "Genesis 1:3", sef: "Genesis.1.3" },
+  { h: "רָאָה", t: "ra-AH", g: "he saw", s: "ר-א-ה", ref: "Genesis 1:4", sef: "Genesis.1.4" },
+  { h: "טוֹב", t: "tov", g: "good", s: "ט-ו-ב", ref: "Genesis 1:4", sef: "Genesis.1.4" },
+  { h: "בָּדַל", t: "ba-DAL", g: "he separated", s: "ב-ד-ל", ref: "Genesis 1:4", sef: "Genesis.1.4" },
+  { h: "בֵּין", t: "beyn", g: "between", s: "", ref: "Genesis 1:4", sef: "Genesis.1.4" },
+  { h: "קָרָא", t: "ka-RA", g: "he called", s: "ק-ר-א", ref: "Genesis 1:5", sef: "Genesis.1.5" },
+  { h: "יוֹם", t: "yom", g: "day", s: "", ref: "Genesis 1:5", sef: "Genesis.1.5" },
+  { h: "לַיְלָה", t: "LAI-lah", g: "night", s: "", ref: "Genesis 1:5", sef: "Genesis.1.5" },
+  { h: "עֶרֶב", t: "E-rev", g: "evening", s: "ע-ר-ב", ref: "Genesis 1:5", sef: "Genesis.1.5" },
+  { h: "בֹּקֶר", t: "BO-ker", g: "morning", s: "ב-ק-ר", ref: "Genesis 1:5", sef: "Genesis.1.5" },
+  { h: "רָקִיעַ", t: "ra-KEE-a", g: "expanse, firmament", s: "ר-ק-ע", ref: "Genesis 1:6", sef: "Genesis.1.6" },
+  { h: "עָשָׂה", t: "a-SAH", g: "he made", s: "ע-ש-ה", ref: "Genesis 1:7", sef: "Genesis.1.7" },
+  { h: "תַּחַת", t: "TA-khat", g: "under, beneath", s: "", ref: "Genesis 1:7", sef: "Genesis.1.7" },
+  { h: "מָקוֹם", t: "ma-KOM", g: "place", s: "ק-ו-ם", ref: "Genesis 1:9", sef: "Genesis.1.9" },
+  { h: "יָם", t: "yam", g: "sea", s: "", ref: "Genesis 1:10", sef: "Genesis.1.10" },
+  { h: "עֵשֶׂב", t: "E-sev", g: "grass, vegetation", s: "", ref: "Genesis 1:11", sef: "Genesis.1.11" },
+  { h: "זֶרַע", t: "ZE-ra", g: "seed", s: "ז-ר-ע", ref: "Genesis 1:11", sef: "Genesis.1.11" },
+  { h: "עֵץ", t: "ets", g: "tree", s: "", ref: "Genesis 1:11", sef: "Genesis.1.11" },
+  { h: "פְּרִי", t: "pe-REE", g: "fruit", s: "פ-ר-ה", ref: "Genesis 1:11", sef: "Genesis.1.11" },
+  { h: "מִין", t: "meen", g: "kind, species", s: "", ref: "Genesis 1:11", sef: "Genesis.1.11" },
+  { h: "מָאוֹר", t: "ma-OR", g: "luminary", s: "א-ו-ר", ref: "Genesis 1:14", sef: "Genesis.1.14" },
+  { h: "אוֹת", t: "ot", g: "sign", s: "", ref: "Genesis 1:14", sef: "Genesis.1.14" },
+  { h: "שָׁנָה", t: "sha-NAH", g: "year", s: "ש-נ-ה", ref: "Genesis 1:14", sef: "Genesis.1.14" },
+  { h: "נָתַן", t: "na-TAN", g: "he gave, placed", s: "נ-ת-ן", ref: "Genesis 1:17", sef: "Genesis.1.17" },
+  { h: "כּוֹכָב", t: "ko-KHAV", g: "star", s: "", ref: "Genesis 1:16", sef: "Genesis.1.16" },
+  { h: "גָּדוֹל", t: "ga-DOL", g: "great", s: "", ref: "Genesis 1:16", sef: "Genesis.1.16" },
+  { h: "קָטֹן", t: "ka-TON", g: "small", s: "ק-ט-ן", ref: "Genesis 1:16", sef: "Genesis.1.16" },
+  { h: "נֶפֶשׁ", t: "NE-fesh", g: "soul, living being", s: "נ-פ-ש", ref: "Genesis 1:20", sef: "Genesis.1.20" },
+  { h: "חַי", t: "khai", g: "living, alive", s: "ח-י-ה", ref: "Genesis 1:20", sef: "Genesis.1.20" },
+  { h: "עוֹף", t: "of", g: "bird", s: "ע-ו-ף", ref: "Genesis 1:20", sef: "Genesis.1.20" },
+  { h: "כָּנָף", t: "ka-NAF", g: "wing", s: "כ-נ-ף", ref: "Genesis 1:21", sef: "Genesis.1.21" },
+  { h: "בֵּרַךְ", t: "be-RAKH", g: "he blessed", s: "ב-ר-ך", ref: "Genesis 1:22", sef: "Genesis.1.22" },
+  { h: "פָּרָה", t: "pa-RAH", g: "be fruitful!", s: "פ-ר-ה", ref: "Genesis 1:22", sef: "Genesis.1.22" },
+  { h: "רָבָה", t: "ra-VAH", g: "increase!", s: "ר-ב-ה", ref: "Genesis 1:22", sef: "Genesis.1.22" },
+  { h: "בְּהֵמָה", t: "be-he-MAH", g: "cattle, beast", s: "ב-ה-מ", ref: "Genesis 1:24", sef: "Genesis.1.24" },
+  { h: "רֶמֶשׂ", t: "RE-mes", g: "creeping thing", s: "ר-מ-ש", ref: "Genesis 1:24", sef: "Genesis.1.24" },
+  { h: "אָדָם", t: "a-DAM", g: "man, humankind", s: "א-ד-ם", ref: "Genesis 1:26", sef: "Genesis.1.26" },
+  { h: "צֶלֶם", t: "TSE-lem", g: "image", s: "צ-ל-ם", ref: "Genesis 1:26", sef: "Genesis.1.26" },
+  { h: "דְּמוּת", t: "de-MUT", g: "likeness", s: "ד-מ-ה", ref: "Genesis 1:26", sef: "Genesis.1.26" },
+  { h: "דָּג", t: "dag", g: "fish", s: "", ref: "Genesis 1:26", sef: "Genesis.1.26" },
+  { h: "זָכָר", t: "za-KHAR", g: "male", s: "ז-כ-ר", ref: "Genesis 1:27", sef: "Genesis.1.27" },
+  { h: "נְקֵבָה", t: "ne-ke-VAH", g: "female", s: "נ-ק-ב", ref: "Genesis 1:27", sef: "Genesis.1.27" },
+  { h: "הִנֵּה", t: "hi-NEH", g: "behold!", s: "", ref: "Genesis 1:29", sef: "Genesis.1.29" },
+  { h: "מְאֹד", t: "me-OD", g: "very", s: "", ref: "Genesis 1:31", sef: "Genesis.1.31" },
+  { h: "שָׁבַת", t: "sha-VAT", g: "he rested", s: "ש-ב-ת", ref: "Genesis 2:2", sef: "Genesis.2.2" },
+  { h: "מְלָאכָה", t: "me-la-KHAH", g: "work", s: "ל-א-ך", ref: "Genesis 2:2", sef: "Genesis.2.2" },
+  { h: "קָדַשׁ", t: "ka-DASH", g: "he sanctified", s: "ק-ד-ש", ref: "Genesis 2:3", sef: "Genesis.2.3" },
+  { h: "אֲדָמָה", t: "a-da-MAH", g: "ground, soil", s: "א-ד-ם", ref: "Genesis 2:5", sef: "Genesis.2.5" },
+  { h: "עָבַד", t: "a-VAD", g: "he worked, served", s: "ע-ב-ד", ref: "Genesis 2:5", sef: "Genesis.2.5" },
+  { h: "נְשָׁמָה", t: "ne-sha-MAH", g: "breath", s: "נ-ש-ם", ref: "Genesis 2:7", sef: "Genesis.2.7" },
+  { h: "גַּן", t: "gan", g: "garden", s: "", ref: "Genesis 2:8", sef: "Genesis.2.8" },
+  { h: "נָהָר", t: "na-HAR", g: "river", s: "", ref: "Genesis 2:10", sef: "Genesis.2.10" },
+  { h: "שָׁמַר", t: "sha-MAR", g: "he kept, guarded", s: "ש-מ-ר", ref: "Genesis 2:15", sef: "Genesis.2.15" },
+  { h: "צָוָה", t: "tsa-VAH", g: "he commanded", s: "צ-ו-ה", ref: "Genesis 2:16", sef: "Genesis.2.16" },
+  { h: "אָכַל", t: "a-KHAL", g: "he ate", s: "א-כ-ל", ref: "Genesis 2:16", sef: "Genesis.2.16" },
+  { h: "מוּת", t: "moot", g: "he died", s: "מ-ו-ת", ref: "Genesis 2:17", sef: "Genesis.2.17" },
+  { h: "עֵזֶר", t: "E-zer", g: "help", s: "ע-ז-ר", ref: "Genesis 2:18", sef: "Genesis.2.18" },
+  { h: "שֵׁם", t: "shem", g: "name", s: "", ref: "Genesis 2:19", sef: "Genesis.2.19" },
+  { h: "צֵלָע", t: "tsa-LA", g: "side, rib", s: "צ-ל-ע", ref: "Genesis 2:21", sef: "Genesis.2.21" },
+  { h: "בָּשָׂר", t: "ba-SAR", g: "flesh", s: "ב-ש-ר", ref: "Genesis 2:21", sef: "Genesis.2.21" },
+  { h: "אִישׁ", t: "eesh", g: "man", s: "", ref: "Genesis 2:23", sef: "Genesis.2.23" },
+  { h: "אִשָּׁה", t: "i-SHAH", g: "woman, wife", s: "", ref: "Genesis 2:22", sef: "Genesis.2.22" },
+  { h: "אָב", t: "av", g: "father", s: "", ref: "Genesis 2:24", sef: "Genesis.2.24" },
+  { h: "אֵם", t: "em", g: "mother", s: "", ref: "Genesis 2:24", sef: "Genesis.2.24" },
+  { h: "דָּבַק", t: "da-VAK", g: "he clung", s: "ד-ב-ק", ref: "Genesis 2:24", sef: "Genesis.2.24" },
+  { h: "עָזַב", t: "a-ZAV", g: "he left", s: "ע-ז-ב", ref: "Genesis 2:24", sef: "Genesis.2.24" },
+  { h: "דִּבֶּר", t: "di-BER", g: "he spoke", s: "ד-ב-ר", ref: "Exodus 20:1", sef: "Exodus.20.1" },
+  { h: "לֹא", t: "lo", g: "not", s: "", ref: "Exodus 20:3", sef: "Exodus.20.3" },
+  { h: "מִצְרַיִם", t: "mits-RA-yim", g: "Egypt", s: "", ref: "Exodus 20:2", sef: "Exodus.20.2" },
+  { h: "עֶבֶד", t: "E-ved", g: "servant, slave", s: "ע-ב-ד", ref: "Exodus 20:2", sef: "Exodus.20.2" },
+  { h: "פֶּסֶל", t: "PE-sel", g: "carved image, idol", s: "פ-ס-ל", ref: "Exodus 20:4", sef: "Exodus.20.4" },
+  { h: "חֶסֶד", t: "KHE-sed", g: "kindness, loyalty", s: "ח-ס-ד", ref: "Exodus 20:6", sef: "Exodus.20.6" },
+  { h: "מִצְוָה", t: "mits-VAH", g: "commandment", s: "צ-ו-ה", ref: "Exodus 20:6", sef: "Exodus.20.6" },
+  { h: "שָׁוְא", t: "shav", g: "vanity, emptiness", s: "", ref: "Exodus 20:7", sef: "Exodus.20.7" },
+  { h: "זָכַר", t: "za-KHAR", g: "remember!", s: "ז-כ-ר", ref: "Exodus 20:8", sef: "Exodus.20.8" },
+  { h: "שַׁבָּת", t: "sha-BAT", g: "Sabbath", s: "ש-ב-ת", ref: "Exodus 20:8", sef: "Exodus.20.8" },
+  { h: "כַּבֵּד", t: "ka-BED", g: "honor!", s: "כ-ב-ד", ref: "Exodus 20:12", sef: "Exodus.20.12" },
+  { h: "רָצַח", t: "ra-TSAKH", g: "he murdered", s: "ר-צ-ח", ref: "Exodus 20:13", sef: "Exodus.20.13" },
+  { h: "נָאַף", t: "na-AF", g: "he committed adultery", s: "נ-א-ף", ref: "Exodus 20:13", sef: "Exodus.20.13" },
+  { h: "גָּנַב", t: "ga-NAV", g: "he stole", s: "ג-נ-ב", ref: "Exodus 20:13", sef: "Exodus.20.13" },
+  { h: "עֵד", t: "ed", g: "witness", s: "ע-ו-ד", ref: "Exodus 20:16", sef: "Exodus.20.16" },
+  { h: "שֶׁקֶר", t: "SHE-ker", g: "falsehood", s: "ש-ק-ר", ref: "Exodus 20:16", sef: "Exodus.20.16" },
+  { h: "חָמַד", t: "kha-MAD", g: "he coveted", s: "ח-מ-ד", ref: "Exodus 20:17", sef: "Exodus.20.17" },
+  { h: "רֵעַ", t: "RE-a", g: "neighbor, fellow", s: "ר-ע-ה", ref: "Exodus 20:16", sef: "Exodus.20.16" },
+];

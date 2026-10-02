@@ -1,0 +1,443 @@
+:root {
+  --navy: #1b365d;
+  --gold: #c5a059;
+  --bg: #f4f6f9;
+  --card: #ffffff;
+  --ink: #1a2433;
+  --muted: #6b7686;
+  --line: #e3e8ef;
+  --red: #d64545;
+  --orange: #e08a2e;
+  --green: #2f9e63;
+  --blue: #2f7fd0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.app {
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+}
+
+/* ---------- header ---------- */
+.header {
+  background: var(--navy);
+  color: #fff;
+  padding: 14px 16px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.header h1 {
+  margin: 0;
+  font-size: 20px;
+  letter-spacing: 0.3px;
+}
+.header .sub {
+  color: var(--gold);
+  font-size: 12px;
+  margin-top: 2px;
+}
+.signout {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  color: #fff;
+  border-radius: 8px;
+  padding: 7px 12px;
+  font-size: 13px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* ---------- layout ---------- */
+.main {
+  flex: 1;
+  padding: 14px 14px 96px;
+}
+.card {
+  background: var(--card);
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(27, 54, 93, 0.08);
+  margin-bottom: 12px;
+}
+.center {
+  text-align: center;
+  padding: 48px 20px;
+  color: var(--muted);
+}
+.footer {
+  text-align: center;
+  font-size: 11px;
+  color: var(--muted);
+  padding: 18px 24px 8px;
+  line-height: 1.5;
+}
+
+/* ---------- tab bar ---------- */
+.tabbar {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  background: #fff;
+  border-top: 1px solid var(--line);
+  z-index: 10;
+}
+.tabbar button {
+  flex: 1;
+  padding: 13px 0 15px;
+  background: none;
+  border: none;
+  border-top: 3px solid transparent;
+  font-size: 14px;
+  color: var(--muted);
+  cursor: pointer;
+}
+.tabbar button.active {
+  color: var(--navy);
+  font-weight: 700;
+  border-top-color: var(--gold);
+}
+
+/* ---------- progress ---------- */
+.progress-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 4px;
+}
+.day-label {
+  font-weight: 700;
+  color: var(--navy);
+}
+.deck-note {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.streak {
+  font-weight: 700;
+  font-size: 15px;
+}
+.bar {
+  height: 8px;
+  background: var(--line);
+  border-radius: 99px;
+  overflow: hidden;
+  margin: 10px 0 6px;
+}
+.bar > div {
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold), #e3c078);
+  transition: width 0.3s ease;
+}
+.session-count {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ---------- flashcard ---------- */
+.flash {
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-align: center;
+  padding: 28px 20px;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.flash-inner {
+  animation: pop 0.22s ease;
+}
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.hebrew {
+  font-size: 46px;
+  line-height: 1.7;
+  direction: rtl;
+  font-family: "Times New Roman", "David Libre", "Noto Serif Hebrew",
+    "Ezra SIL", serif;
+}
+.translit {
+  color: var(--muted);
+  margin-top: 10px;
+  font-size: 16px;
+}
+.gloss {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.3;
+}
+.shoresh {
+  color: var(--muted);
+  margin-top: 12px;
+  font-size: 15px;
+}
+.verse-ref {
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--muted);
+}
+.sefaria-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--blue);
+  text-decoration: none;
+  font-weight: 600;
+}
+.hint {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 16px;
+}
+.audio-btn {
+  margin-top: 14px;
+  background: var(--navy);
+  color: #fff;
+  border: none;
+  border-radius: 99px;
+  width: 46px;
+  height: 46px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* ---------- SRS buttons ---------- */
+.srs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-top: 12px;
+}
+.srs button {
+  border: none;
+  border-radius: 10px;
+  padding: 13px 4px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+}
+.srs .again {
+  background: var(--red);
+}
+.srs .hard {
+  background: var(--orange);
+}
+.srs .good {
+  background: var(--green);
+}
+.srs .easy {
+  background: var(--blue);
+}
+
+/* ---------- words tab ---------- */
+.search {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font-size: 15px;
+  margin-bottom: 6px;
+  background: #fff;
+}
+.word-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 4px;
+  border-bottom: 1px solid var(--line);
+  cursor: pointer;
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 99px;
+  flex-shrink: 0;
+}
+.word-he {
+  font-size: 21px;
+  direction: rtl;
+  font-family: "Times New Roman", "David Libre", "Noto Serif Hebrew",
+    "Ezra SIL", serif;
+  white-space: nowrap;
+}
+.word-meta {
+  flex: 1;
+  min-width: 0;
+}
+.word-t {
+  font-size: 13px;
+  color: var(--muted);
+}
+.word-g {
+  font-size: 14px;
+  margin-top: 1px;
+}
+.word-detail {
+  padding: 4px 4px 12px 20px;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.word-detail a {
+  color: var(--blue);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* ---------- stats ---------- */
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 11px 2px;
+  border-bottom: 1px solid var(--line);
+  font-size: 15px;
+}
+.stat-row b {
+  color: var(--navy);
+}
+.section-title {
+  font-weight: 700;
+  color: var(--navy);
+  margin: 4px 0 10px;
+}
+.seg {
+  display: flex;
+  gap: 8px;
+}
+.seg button {
+  flex: 1;
+  padding: 11px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--ink);
+}
+.seg button.active {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
+}
+.danger {
+  width: 100%;
+  margin-top: 14px;
+  padding: 13px;
+  border-radius: 10px;
+  border: 1px solid var(--red);
+  color: var(--red);
+  background: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* ---------- login ---------- */
+.login-wrap {
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 9vh 22px 22px;
+}
+.login-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 26px 22px;
+  box-shadow: 0 2px 10px rgba(27, 54, 93, 0.1);
+}
+.login-card h1 {
+  color: var(--navy);
+  margin: 0 0 4px;
+  font-size: 24px;
+}
+.login-card .sub {
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+.login-card p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.login-card input {
+  width: 100%;
+  padding: 13px 12px;
+  font-size: 16px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  margin: 10px 0 12px;
+}
+.btn-primary {
+  width: 100%;
+  background: var(--navy);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.btn-primary:disabled {
+  opacity: 0.6;
+}
+.err {
+  color: var(--red);
+  font-size: 14px;
+  margin-top: 10px;
+}
+.sent-box {
+  text-align: center;
+  padding: 10px 0 4px;
+}
+.sent-box .big {
+  font-size: 44px;
+}
